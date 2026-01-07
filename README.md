@@ -38,21 +38,21 @@ This project can be built and executed on a standard desktop system for testing 
 From the root directory of the project, compile the source files using the following command:
 
 ```bash
-gcc -Iinclude src/json_serializer.c examples/test.c -o json_test1
+gcc -Iinclude src/json_serializer.c examples/main.c -o json_test
 ```
 This command:
 
 • Includes the public header files from the `include/` directory  
 • Compiles the JSON serialization library  
 • Compiles the example application  
-• Produces an executable named `json_test1`  
+• Produces an executable named `json_test`  
 
 ### Run Instructions
 
 After successful compilation, run the executable:
 
 ```bash
-./json_test1
+.\json_test
 ```
 
 ### Expected Output
@@ -76,8 +76,8 @@ Serialization Successful:
      "unit": "m3",
      "data": [
       {
-       "timestamp": "2026-01-06 22:00",
-       "meter_datetime": "2026-01-06 22:00",
+       "timestamp": "1970-01-01 00:00",
+       "meter_datetime": "1970-01-01 00:00",
        "total_m3": 107.752,
        "status": "OK"
       }
