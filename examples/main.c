@@ -29,16 +29,16 @@ int main(void) {
 
     // first data point
     DataPoint *dp = reading->data;
-    strcpy(dp->timestamp, "2026-01-06 22:00");
-    strcpy(dp->meter_datetime, "2026-01-06 22:00");
-    dp->total_m3 = 107.752; // Numbers must not be strings [3]
+    strcpy(dp->timestamp, "1970-01-01 22:00");
+    strcpy(dp->meter_datetime, "1970-01-01 00:00");
+    dp->total_m3 = 107.752; // Numbers must not be strings
     strcpy(dp->status, "OK");
 
     // Preparing caller-provided output buffer 
     //  maximum possible JSON size 
 
     char json_buffer[1024]; 
-    memset(json_buffer, 0, sizeof(json_buffer));   // set all char of nuffer to zero
+    memset(json_buffer, 0, sizeof(json_buffer));   // set all char of Buffer to zero
 
     // Calling serialization library
     SerializerStatus status = serialize_to_json(&myGateway, json_buffer, sizeof(json_buffer));
@@ -54,4 +54,5 @@ int main(void) {
     }
 
     return 0;
+
 }
